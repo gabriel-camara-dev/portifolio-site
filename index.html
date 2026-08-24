@@ -24,10 +24,12 @@
     />
     <title>Gabriel Câmara | Full Stack Developer</title>
     <script>
-      // Claro e o padrao: so entra no escuro se a pessoa tiver escolhido.
+      // Segue a preferencia do sistema, e a escolha salva tem prioridade.
       // Evita flash de tema errado antes do React montar.
       ;(function () {
-        if (localStorage.getItem('gc-portfolio-theme') === 'dark') {
+        var stored = localStorage.getItem('gc-portfolio-theme')
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (stored === 'dark' || (!stored && prefersDark)) {
           document.documentElement.classList.add('dark')
         }
       })()
