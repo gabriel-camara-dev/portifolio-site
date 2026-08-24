@@ -108,7 +108,6 @@ export const projects: Project[] = [
     ],
     stack: ['React', 'Node.js', 'WebSocket', 'TypeScript'],
     repo: 'https://github.com/gabriel-camara-dev/live-chat',
-    featured: true,
   },
   {
     name: 'Template Backend NestJS',
@@ -123,6 +122,7 @@ export const projects: Project[] = [
     ],
     stack: ['NestJS', 'Prisma', 'PostgreSQL', 'Zod', 'Swagger', 'Biome', 'Docker'],
     repo: 'https://github.com/gabriel-camara-dev/template-backend-nest',
+    featured: true,
   },
   {
     name: 'Template Backend Fastify',
