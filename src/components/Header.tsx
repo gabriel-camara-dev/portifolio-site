@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { MobileMenu } from './MobileMenu'
 import { ThemeToggle } from './ThemeToggle'
 import { Logo } from './ui/Logo'
 
@@ -66,24 +67,7 @@ export function Header() {
         </div>
       </div>
 
-      {isMenuOpen ? (
-        <nav className="border-t border-line bg-paper/95 backdrop-blur-md md:hidden">
-          <ul className="mx-auto flex w-full max-w-6xl flex-col px-5 py-1 sm:px-8">
-            {navItems.map((item) => (
-              <li key={item.href} className="border-b border-line last:border-b-0">
-                <a
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-baseline gap-2 py-3 font-mono text-xs tracking-[0.18em] text-muted transition-colors hover:text-brand"
-                >
-                  <span className="text-brand">{item.index}</span>
-                  {item.label.toUpperCase()}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ) : null}
+      <MobileMenu isOpen={isMenuOpen} items={navItems} onClose={() => setIsMenuOpen(false)} />
     </header>
   )
 }

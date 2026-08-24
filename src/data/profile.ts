@@ -5,7 +5,8 @@ export const profile = {
   location: 'Rio de Janeiro, Brasil',
   education: 'Sistemas de Informação, UFF (2027)',
   avatar: 'https://avatars.githubusercontent.com/u/174543932?v=4',
-  headline: 'Construo backends que aguentam produção e frontends que as pessoas conseguem usar.',
+  headline:
+    'Node.js e React. Do modelo do banco à interface, levo o sistema inteiro até produção.',
   summary: [
     'Desenvolvedor full stack focado em Node.js, NestJS, Fastify, React e bancos relacionais. Gosto de resolver o problema na camada certa: domínio isolado, casos de uso testáveis e infraestrutura substituível.',
     'Na prática isso vira Clean Architecture com DDD, use cases que retornam Result em vez de lançar exceção, repositórios abstratos como portas e Prisma/SQL só na borda. Testes com Vitest e Jest, do unitário ao e2e.',

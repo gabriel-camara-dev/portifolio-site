@@ -72,24 +72,29 @@ export function Hero() {
             className="animate-fade-in justify-self-start lg:justify-self-end"
             style={{ animationDelay: '180ms' }}
           >
-            <figure className="group relative w-fit">
-              <span
-                className="absolute -bottom-3 -right-3 h-full w-full bg-brand transition-transform duration-500 group-hover:-translate-x-1 group-hover:translate-y-1"
-                aria-hidden="true"
-              />
-              <span
-                className="absolute -left-3 -top-3 h-full w-full border border-line transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-              <img
-                src={profile.avatar}
-                alt={profile.fullName}
-                width={320}
-                height={320}
-                loading="eager"
-                className="relative block size-56 object-cover transition-transform duration-500 group-hover:scale-[1.02] sm:size-72 lg:size-80"
-              />
-              <figcaption className="relative mt-4 font-mono text-[10px] tracking-[0.22em] text-muted">
+            <figure className="group w-fit max-w-full">
+              {/* As decorações são posicionadas por este wrapper, que tem exatamente
+                  o tamanho da imagem. Se ficarem no <figure>, a legenda estica a
+                  caixa e os blocos passam a cobrir o texto. */}
+              <div className="relative w-fit">
+                <span
+                  className="absolute -bottom-3 -right-3 h-full w-full bg-brand transition-transform duration-500 group-hover:-translate-x-1 group-hover:translate-y-1"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute -left-3 -top-3 h-full w-full border border-line transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+                <img
+                  src={profile.avatar}
+                  alt={profile.fullName}
+                  width={320}
+                  height={320}
+                  loading="eager"
+                  className="relative block size-48 object-cover transition-transform duration-500 group-hover:scale-[1.02] sm:size-72 lg:size-80"
+                />
+              </div>
+              <figcaption className="mt-6 max-w-full font-mono text-[10px] leading-relaxed tracking-[0.16em] text-muted sm:tracking-[0.22em]">
                 // {profile.fullName.toUpperCase()}
               </figcaption>
             </figure>

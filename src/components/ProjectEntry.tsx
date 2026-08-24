@@ -10,13 +10,13 @@ export function ProjectEntry({ project, index }: ProjectEntryProps) {
   return (
     <article className="group relative border-b border-line py-8 lg:py-10">
       <span
-        className="absolute left-0 top-0 h-full w-0.5 origin-top scale-y-0 bg-brand transition-transform duration-500 group-hover:scale-y-100"
+        className="absolute left-0 top-0 h-full w-0.5 origin-top scale-y-0 bg-brand transition-transform duration-1000 ease-out group-hover:scale-y-100"
         aria-hidden="true"
       />
 
       <div className="grid gap-6 transition-transform duration-300 group-hover:translate-x-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
         <div className="min-w-0">
-          <div className="flex items-baseline gap-3">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-mono text-[11px] tracking-[0.18em] text-brand">{index}</span>
             <h3 className="font-display text-2xl font-bold tracking-tight transition-colors group-hover:text-brand sm:text-3xl">
               {project.name}
@@ -24,7 +24,7 @@ export function ProjectEntry({ project, index }: ProjectEntryProps) {
             <span className="font-mono text-[11px] text-muted">{project.year}</span>
           </div>
 
-          <p className="mt-1.5 pl-8 font-mono text-[11px] tracking-[0.14em] text-muted">
+          <p className="mt-2 font-mono text-[11px] leading-relaxed tracking-[0.08em] text-muted sm:mt-1.5 sm:pl-8 sm:tracking-[0.14em]">
             {project.tagline.toUpperCase()}
           </p>
 

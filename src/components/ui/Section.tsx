@@ -14,15 +14,17 @@ export function Section({ id, index, label, title, subtitle, children }: Section
   return (
     <section id={id} className="border-b border-line">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <div className="grid gap-8 py-16 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-14 lg:grid-cols-[9rem_minmax(0,1fr)] lg:py-24">
-          <div className="md:sticky md:top-28 md:self-start">
+        <div className="grid gap-5 py-14 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-14 md:py-16 lg:grid-cols-[9rem_minmax(0,1fr)] lg:py-24">
+          {/* No mobile o número e o rótulo ficam lado a lado: empilhados, abriam
+              uma faixa vazia enorme antes do título. */}
+          <div className="flex items-baseline gap-3 md:sticky md:top-28 md:block md:self-start">
             <span
-              className="block font-display text-5xl font-bold leading-none tracking-tighter text-line lg:text-7xl"
+              className="font-display text-4xl font-bold leading-none tracking-tighter text-line md:block md:text-5xl lg:text-7xl"
               aria-hidden="true"
             >
               {index}
             </span>
-            <span className="mt-2 block font-mono text-[10px] tracking-[0.28em] text-brand">
+            <span className="font-mono text-[10px] tracking-[0.28em] text-brand md:mt-2 md:block">
               {label}
             </span>
           </div>
